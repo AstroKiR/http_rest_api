@@ -1,9 +1,13 @@
 package apiserver
 
-type APIServer struct{}
+type APIServer struct {
+	config *Config
+}
 
-func NewAPIServer() *APIServer {
-	return &APIServer{}
+func NewAPIServer(config *Config) *APIServer {
+	return &APIServer{
+		config: config,
+	}
 }
 
 func (server *APIServer) StartAPIServer() error {
